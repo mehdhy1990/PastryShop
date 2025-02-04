@@ -16,6 +16,7 @@ public class PieController : Controller
     // GET
     public IActionResult List()
     {
+        ViewBag.CurrentCategory = "Cheese Cake";
         return View(_pieRepository.AllPies);
     }
 }
