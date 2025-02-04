@@ -1,4 +1,4 @@
-﻿@model TModel
+﻿@model PastryShop.ViewModel.PieListViewModel
 
 @{
     Layout = null;
@@ -8,11 +8,17 @@
 
 <html>
 <head>
-    <title>title</title>
+    <title>Pie Shop</title>
 </head>
 <body>
-<div>
-      
-</div>
+<h1>@Model.CurrentCategory</h1>
+@foreach(var Pie in Model.Pies)
+{
+    <div>
+        <h2>@Pie.Name</h2>
+        <h3>@Pie.Price.ToString("C")</h3>
+        <h4>@Pie.Category.Description</h4>
+    </div>
+}
 </body>
 </html>
