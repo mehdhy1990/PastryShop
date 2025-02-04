@@ -1,16 +1,10 @@
 ﻿@model PastryShop.ViewModel.PieListViewModel
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <title>Pie Shop</title>
-</head>
-<body>
 <h1>@Model.CurrentCategory</h1>
 @foreach(var Pie in Model.Pies)
 {
@@ -20,5 +14,3 @@
         <h4>@Pie.Category.Description</h4>
     </div>
 }
-</body>
-</html>
