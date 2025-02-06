@@ -19,7 +19,7 @@ public class PieController : Controller
     {
         // ViewBag.CurrentCategory = "Cheese Cake";
         // return View(_pieRepository.AllPies);
-        var pieListViewModel = new PieListViewModel(_pieRepository.AllPies,"Cheese Cakes");
+        var pieListViewModel = new PieListViewModel(_pieRepository.AllPies,"All Pies");
         return View(pieListViewModel);
     }
 
