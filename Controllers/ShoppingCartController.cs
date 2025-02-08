@@ -19,7 +19,7 @@ public class ShoppingCartController : Controller
     {
         var items = _shoppingCart.GetShoppingCardItems();
         _shoppingCart.ShoppingCartItems = items;
-        var shoppingCartViewModel = new ShoppingCardViewModel(_shoppingCart, _shoppingCart.GetShoppingCartTotal());
+        var shoppingCartViewModel = new ShoppingCartViewModel(_shoppingCart, _shoppingCart.GetShoppingCartTotal());
         return View(shoppingCartViewModel);
     }
 
