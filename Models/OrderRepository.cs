@@ -2,7 +2,7 @@
 
 public class OrderRepository : IOrderRepository
 {
-    private readonly PastryShopDbContext  _bethanysPieShopDbContext;
+    private readonly PastryShopDbContext _bethanysPieShopDbContext;
     private readonly IShoppingCart _shoppingCart;
 
     public OrderRepository(PastryShopDbContext bethanysPieShopDbContext, IShoppingCart shoppingCart)
@@ -35,4 +35,5 @@ public class OrderRepository : IOrderRepository
         _bethanysPieShopDbContext.Orders.Add(order);
 
         _bethanysPieShopDbContext.SaveChanges();
+    }
 }
