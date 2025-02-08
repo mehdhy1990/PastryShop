@@ -7,7 +7,7 @@
 
 <div class="row gx-3">
     <div class="col-8">
-        @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+        @foreach (var line in Model.ShoppingCart?.ShoppingCartItems)
         {
             <div class="card shopping-cart-card mb-2">
                 <div class="row">

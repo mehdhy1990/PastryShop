@@ -9,7 +9,7 @@ public class ShoppingCartViewModel
 
     public ShoppingCartViewModel(IShoppingCart shoppingCart, decimal shoppingCartTotal)
     {
-        shoppingCart = shoppingCart;
+        ShoppingCart = shoppingCart;
         ShoppingCartTotal = shoppingCartTotal;
     }
 }
