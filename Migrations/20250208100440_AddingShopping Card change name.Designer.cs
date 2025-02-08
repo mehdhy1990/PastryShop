@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PastryShop.Models;
 
@@ -10,9 +11,11 @@ using PastryShop.Models;
 namespace PastryShop.Migrations
 {
     [DbContext(typeof(PastryShopDbContext))]
-    partial class PastryShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250208100440_AddingShopping Card change name")]
+    partial class AddingShoppingCardchangename
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

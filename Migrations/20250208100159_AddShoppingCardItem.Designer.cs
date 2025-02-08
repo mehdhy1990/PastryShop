@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PastryShop.Models;
 
@@ -10,9 +11,11 @@ using PastryShop.Models;
 namespace PastryShop.Migrations
 {
     [DbContext(typeof(PastryShopDbContext))]
-    partial class PastryShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250208100159_AddShoppingCardItem")]
+    partial class AddShoppingCardItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,7 +111,7 @@ namespace PastryShop.Migrations
 
                     b.HasIndex("PieId");
 
-                    b.ToTable("ShoppingCardItems");
+                    b.ToTable("Type");
                 });
 
             modelBuilder.Entity("PastryShop.Models.Pie", b =>
