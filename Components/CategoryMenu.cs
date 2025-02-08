@@ -14,7 +14,7 @@ public class CategoryMenu: ViewComponent
 
     public IViewComponentResult Invoke()
     {
-        var categories = _categoryRepository.AllCategories.OrderBy(c=>c.CategoryName).ToList();
+        var categories = _categoryRepository.AllCategories.OrderBy(c => c.CategoryName);
         return View(categories);
     }
 }
