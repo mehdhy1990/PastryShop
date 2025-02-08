@@ -2,7 +2,7 @@
 
 namespace PastryShop.Models;
 
-public class ShoppingCart : IShoppingCard
+public class ShoppingCart : IShoppingCart
 {
     private readonly PastryShopDbContext _bethanysPieShopDbContext;
 

@@ -4,12 +4,12 @@ namespace PastryShop.ViewModel;
 
 public class ShoppingCardViewModel
 {
-    public IShoppingCard ShoppingCard { get; set; }
+    public IShoppingCart shoppingCart { get; set; }
     public decimal ShoppingCardTotal { get; set; }
 
-    public ShoppingCardViewModel(IShoppingCard shoppingCard, decimal shoppingCardTotal)
+    public ShoppingCardViewModel(IShoppingCart shoppingCart, decimal shoppingCardTotal)
     {
-        ShoppingCard = shoppingCard;
+        shoppingCart = shoppingCart;
         ShoppingCardTotal = shoppingCardTotal;
     }
 }

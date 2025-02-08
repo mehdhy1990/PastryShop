@@ -1,6 +1,6 @@
 ﻿namespace PastryShop.Models;
 
-public interface IShoppingCard
+public interface IShoppingCart
 {
     void AddToCart(Pie pie);
     int RemoveFromCart(Pie pie);
