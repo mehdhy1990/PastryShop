@@ -15,13 +15,17 @@ public class SearchController : ControllerBase
 [HttpGet]
     public IActionResult GetAll()
     {
-        
+        return Ok(_pieRepository.AllPies);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetPiesById(int id)
     {
-        
+        if (!_pieRepository.AllPies.Any(c => c.PieId == id))
+        {
+            return NotFound();
+        }
+        return Ok(_pieRepository.AllPies.Where(c => c.PieId == id));
     }
     
 }
