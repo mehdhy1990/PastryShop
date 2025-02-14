@@ -4,18 +4,18 @@ namespace PastryShop.Models;
 
 public class PieRepository : IPieRepository
 {
-    private readonly PastryShopDbContext _context;
+    private readonly PastryShopDbContext _pastryShopDbContext;
 
-    public PieRepository(PastryShopDbContext context)
+    public PieRepository(PastryShopDbContext pastryShopDbContext)
     {
-        _context = context;
+        _pastryShopDbContext = pastryShopDbContext;
     }
 
     public IEnumerable<Pie> AllPies
     {
         get
         {
-            return _context.Pies.Include(c=>c.Category);
+            return _pastryShopDbContext.Pies.Include(c=>c.Category);
         }
     }
 
@@ -23,17 +23,17 @@ public class PieRepository : IPieRepository
     {
         get
         {
-            return _context.Pies.Include(c=>c.Category).Where(p=>p.IsPieOfTheWeek);
+            return _pastryShopDbContext.Pies.Include(c=>c.Category).Where(p=>p.IsPieOfTheWeek);
         }
     }
 
     public Pie? GetPieById(int pieId)
     {
-        return _context.Pies.Include(c=>c.Category).FirstOrDefault(p=>p.PieId == pieId);
+        return _pastryShopDbContext.Pies.Include(c=>c.Category).FirstOrDefault(p=>p.PieId == pieId);
     }
 
     public IEnumerable<Pie> SearchPies(string searchQuery)
     {
-        throw new NotImplementedException();
+       return _pastryShopDbContext.Pies.Where(p=>p.Name.Contains(searchQuery));
     }
 }
