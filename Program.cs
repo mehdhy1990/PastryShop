@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using PastryShop.Models;
 
@@ -13,7 +14,9 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<PastryShopDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PastryShopConnectionString"))
 );
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddJsonOptions(options=>
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+    );
 
 var app = builder.Build();
 app.UseStaticFiles();
